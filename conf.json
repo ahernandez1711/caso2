@@ -1,0 +1,34 @@
+{
+    "tiempoSimulacionHora": 50000, //milliseconds
+    "minHora" : 15,
+    "maxHora" : 150,
+
+    "camiones": {
+        "minCantCamiones" : 2,
+        "maxCantCamiones" : 20,
+        "maxFilaCamiones" : 10,
+        "maxPilasEnCamion" : 1,
+        "tiempoEsperaEntreLlegadaCamiones" : 10,
+        "tiempoEsperaEntreRevisionEspacioColaCamiones" : 5,
+        "tiempoEsperaEntreRevisionZonasAlmacenamiento" : 1,
+        "tiempoDescargaProductos" : 3,
+        "tiempoCargaProductos" : 3
+    },
+    "pilaProductos" : {
+        "minProductosPorPila" : 1,
+        "maxProductosPorPila" : 15,
+        "cantProductosPorPila" : "aleatorio"
+    },
+    "pedidos" : {
+        "maxCantPedidosAceptados" : 15,
+        "minCantProductosPorPedido" : 1,
+        "maxCantProductosPorPedido" : 30,
+        "tiempoAceptacionPedido" : 5,
+        "tiempoRevisionZonasAlmacenamiento" : 3,
+        "tiempoEmpaquetandoPedido" : 3,
+        "cantProductosPorPedido" : "aleatorio"
+    },
+    "pedido" : [
+        "producto" : [ "nombre", "tamaño", "peso"],
+    ]
+}
