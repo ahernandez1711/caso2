@@ -4,31 +4,45 @@
     "maxHora" : 150,
 
     "camiones": {
-        "minCantCamiones" : 2,
-        "maxCantCamiones" : 20,
-        "maxFilaCamiones" : 10,
-        "maxPilasEnCamion" : 1,
-        "tiempoEsperaEntreLlegadaCamiones" : 10,
-        "tiempoEsperaEntreRevisionEspacioColaCamiones" : 5,
-        "tiempoEsperaEntreRevisionZonasAlmacenamiento" : 1,
-        "tiempoDescargaProductos" : 3,
-        "tiempoCargaProductos" : 3
+        "minCantCamiones" : 2, //Cantidad mínima de camiones que deben aparecer en toda la simulación
+        "maxCantCamiones" : 20, //Cantidad máxima de camiones que deben aparecer en toda la simulación
+        "maxFilaCamiones" : 10, //Cantidad máxima de camiones que puede estar haciendo fila
+        "maxPilasEnCamion" : 1, //La carga de cada camión
+        "tiempoEsperaEntreLlegadaCamiones" : 10, //Cada cuanto se une un camión a la cola
+        "tiempoEsperaEntreRevisionEspacioColaCamiones" : 5, //Si la cola está llena, cada cierto tiempo se pregunta si hay espacio
+        "tiempoEsperaEntreRevisionZonasAlmacenamiento" : 1, //Para poder descargar los productos, cada cierto tiempo se pregunta si hay espacio para guardarlos
+        "tiempoDescargaProductos" : 3, //Tiempo de descarga
+        "tiempoCargaProductos" : 3 //Tiempo de carga
     },
     "pilaProductos" : {
-        "minProductosPorPila" : 1,
-        "maxProductosPorPila" : 15,
-        "cantProductosPorPila" : "aleatorio"
+        "minProductosPorPila" : 5, //Cantidad mínima de productos que hay en una pila
+        "maxProductosPorPila" : 20, //Cantidad máxima de productos que hay en una pila
+        "cantProductosPorPila" : "aleatorio" //La cantidad de productos que hay en una pila va a ser aleatorio entre 5 y 20
     },
     "pedidos" : {
-        "maxCantPedidosAceptados" : 15,
-        "minCantProductosPorPedido" : 1,
-        "maxCantProductosPorPedido" : 30,
-        "tiempoAceptacionPedido" : 5,
-        "tiempoRevisionZonasAlmacenamiento" : 3,
-        "tiempoEmpaquetandoPedido" : 3,
-        "cantProductosPorPedido" : "aleatorio"
+        "maxCantPedidosAceptados" : 15, //La cantidad de pedidos que se aceptan durante la simulación
+        "minCantProductosPorPedido" : 1, //La cantidad mínima de productos que se pueden solicitar en un pedido
+        "maxCantProductosPorPedido" : 30, //La cantidad máxima de productos que se pueden solicitar en un pedido
+        "cantProductosPorPedido" : "aleatorio", //La cantidad de productos que se pueden solicitar en un pedido va a ser aleatorio entre 1 y 30        
+        "tiempoAceptacionPedido" : 5, //Cada cuanto se empieza a hacer un pedido
+        "tiempoRevisionZonasAlmacenamiento" : 3, //El tiempo que se dura revisando si todos los productos necesarios están en la zona de almacenamiento
+        "tiempoEmpaquetandoPedido" : 3 //Tiempo que se dura empaquetando cada pedido
     },
-    "pedido" : [
-        "producto" : [ "nombre", "tamaño", "peso"],
+    "productos" : [ //Productos distintos que pueden venir en un camión
+        "producto 1" : [ "nombre", "tamaño", "peso"],
+        "producto 2" : [ "nombre", "tamaño", "peso"],
+        "producto 3" : [ "nombre", "tamaño", "peso"],
+        "producto 4" : [ "nombre", "tamaño", "peso"],
+        "producto 5" : [ "nombre", "tamaño", "peso"],
+        "producto 6" : [ "nombre", "tamaño", "peso"],
+        "producto 7" : [ "nombre", "tamaño", "peso"],
+        "producto 8" : [ "nombre", "tamaño", "peso"],
+        "producto 9" : [ "nombre", "tamaño", "peso"],
+        "producto 10" : [ "nombre", "tamaño", "peso"],
+    ],
+
+    "pedido" : [ //Datos de los productos que vienen en un pedido
+        "productos" : [ "nombre", "cantidad"],
     ]
+
 }
