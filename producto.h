@@ -15,8 +15,24 @@ class Producto {
         int precio;
 
     public:
-        Producto(string pNombre, int pPeso, int pPrecio);
-        string getNombre();
-        int getPeso();
-        int getPrecio();
+        Producto(string pNombre, int pPeso, int pPrecio)
+        {
+            this->nombre = pNombre;
+            this->peso = pPeso;
+            this->precio = pPrecio;
+        }
+
+        string getNombre() //Retorna el nombre del producto
+        {
+            return nombre;
+        }
+
+        int getPeso() //Retorna el peso del producto
+        {
+            return peso;
+        }
+        int getPrecio() //Retorna el precio del producto
+        {
+            return precio;
+        }
 };

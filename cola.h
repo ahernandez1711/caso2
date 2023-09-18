@@ -8,16 +8,44 @@
 
 class Cola {
 private:
-    Lista *listaCola;
+    Lista* listaCola;
 
 public:
-    Cola();
-    void agregarFinal(Lista* dato);
-    Nodo* sacarFinal();
-    Nodo* frente();
-    bool vacia();
+    Cola()
+    {
+        listaCola = new Lista();
+    }
+
+    void agregarFinal(Producto* producto)
+    {
+        listaCola->agregar(producto);
+    }
+
+    Producto* sacarInicio()
+    {
+        return listaCola->remover(0);
+    }
+
+    Producto* frente()
+    {
+        Producto* resultado = NULL;
+
+        if (!listaCola->vacia())
+        {
+            resultado = listaCola->encontrarConPosition(0);
+        }
+        return resultado;
+    }
+    bool vacia()
+    {
+        return listaCola->vacia();
+    }
 };
 
-//La lista de camiones que llega a dejar los productos es una cola
-//La lista de productos en un pedido es una cola
-//La lista de camiones que se lleva los productos es una cola
+/* ¿Qué es una cola?
+
+La lista de camiones que llega a dejar los productos es una cola
+La lista de productos en un pedido es una cola
+La lista de camiones que se lleva las pilas de productos es una cola
+
+*/

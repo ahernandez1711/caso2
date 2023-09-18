@@ -11,13 +11,39 @@ class Pila {
         Lista* listaPila;
 
     public:
-        Pila();
-        void push(Nodo* dato);
-        Nodo* pop();
-        Nodo* top();
-        bool vacia();
+        Pila()
+        {
+        listaPila = new Lista();
+    }
+        void push(Producto* producto)
+        {
+        listaPila->insertarEnPosition(0, producto);
+    }
+        Producto* pop()
+        {
+        return listaPila->remover(0);
+    }
+        Producto* top()
+        {
+        Producto* resultado = NULL;
+
+        if (!listaPila->vacia())
+        {
+            resultado = listaPila->encontrarConPosition(0);
+        }
+        return resultado;
+    }
+
+        bool vacia()
+        {
+        return listaPila->vacia();
+    }
 
 };
 
-//La lista de productos que se encuentra en el camión es una pila
-//La lista de productos que se genera en un pedido es una pila
+/* ¿Qué es una pila?
+
+La lista de productos que se encuentra en el camión es una pila
+La lista de productos que se crea para el pedido es una pila
+
+*/
